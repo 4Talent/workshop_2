@@ -1,0 +1,18 @@
+p id="notice" = notice
+
+p
+  strong Title:
+  = @product.title
+
+p
+  strong Description
+  = @product.description
+
+p
+  strong.color.max.all#strong1 Comments:
+  ul
+    - @product.comments.each do |comment|
+      li = comment.content
+
+= link_to 'Edit', edit_product_path(@product)
+= link_to 'Back', products_path
